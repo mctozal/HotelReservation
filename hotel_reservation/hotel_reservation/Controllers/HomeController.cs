@@ -55,6 +55,9 @@ namespace hotel_reservation.Controllers
             return View(model);
         }
 
+
+
+
         [HttpPost]
         public ActionResult HotelReservation(int? id, string name)
         {
@@ -66,6 +69,19 @@ namespace hotel_reservation.Controllers
             return View();
         }
 
+       
+        public ActionResult UserLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminPanel(AdminLogin admin)
+        {
+
+            return View();
+
+        }
 
     }
 }
