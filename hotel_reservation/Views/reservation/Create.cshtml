@@ -1,0 +1,71 @@
+﻿@model hotel_reservation.Models.CreateView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var RoomId = ViewBag.RoomId;
+}
+@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>*@
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+<style>
+    .card-default {
+        color: #333;
+        background: linear-gradient(#fff,#ebebeb) repeat scroll 0 0 transparent;
+        font-weight: 600;
+        border-radius: 6px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <div class="container card-default">
+        <div class="row">
+            <div class="col-sm-12 bg-transparent">
+                <h4 class="page-header bg-dark">Kişisel Bilgiler</h4>
+                <form role="form">
+                    <div class="form-group float-label-control">
+                        <label for="">İsim</label>
+                        @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for=" ">Soyisim</label>    
+                        @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for=" ">Telefon</label>
+                        @Html.EditorFor(model => model.phone_number, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for=" ">E-mail</label>
+                        @Html.EditorFor(model => model.e_mail, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for="">Rezervasyon Başlangıç Tarihi</label>
+                        @Html.EditorFor(model => model.date_in, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for="">Rezervasyon Bitiş Tarihi</label>
+                        @Html.EditorFor(model => model.date_out, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+
+                    
+                </form>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-xl btn-primary pull-right" value="Kaydı tamamla" />
+    </div>
+
+}
+
+
+<script type="text/javascript">
+    $(function () { // will trigger when the document is ready
+        $('.datepicker').datepicker(); //Initialise any date pickers
+    });
+</script>

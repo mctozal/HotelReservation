@@ -1,0 +1,68 @@
+﻿@model IEnumerable<hotel_reservation.Models.EntityFramework.guest>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Guests</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+
+<div class="row">
+    <div class="box">
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.first_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.last_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.e_mail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone_number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.first_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.e_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+
+            </td>
+        </tr>
+            }
+
+        </table>
+    </div>    
+    </div>
