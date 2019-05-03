@@ -1,0 +1,16 @@
+It's MVC project for hotel reservation system.
+
+1- First run db_hotelreservation script to have ms database.
+2- Then run the solution and change the connectionstring from webconfig
+3- Then you can use program.
+
+there are 
+
+-guest
+-payment
+-reservation
+-credit card payment
+
+implemented. 
+
+Keep coding :)
