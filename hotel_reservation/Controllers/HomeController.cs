@@ -12,15 +12,11 @@ namespace hotel_reservation.Controllers
 
     public class HomeController : Controller
     {
-        hotel_reservationEntities3 db = new hotel_reservationEntities3();
-
-        
+        hotel_reservationEntities3 db = new hotel_reservationEntities3();        
         // GET: Home
-
         public ActionResult Index()
         {
-            
-            
+          
             return View();
 
         }
@@ -34,7 +30,6 @@ namespace hotel_reservation.Controllers
             List<RoomsView> model = new List<RoomsView>();
             rooms.ForEach(item =>
             {
-
                 var roomsView = new RoomsView();
                 roomsView.id = item.id;
                 roomsView.name = item.name;
@@ -42,25 +37,17 @@ namespace hotel_reservation.Controllers
                 roomsView.room_type = item.room_type.description;
                 roomsView.smoke = item.smoke;
                 roomsView.status = item.status;
-
                 string adres = "/Content/img/" + item.id + ".jpg";
                 roomsView.url = adres;
-
                 model.Add(roomsView);
             });
 
             //List<room> odalar = new List<room>();
-
             //List<string> url = new List<string>();
-
             //odalar.Add(room1);
             //odalar.Add(room2);
             return View(model);
         }
-
-
-
-
         [HttpPost]
         public ActionResult HotelReservation(int? id, string name)
         {
@@ -71,8 +58,7 @@ namespace hotel_reservation.Controllers
         {
             return View();
         }
-
-       
+ 
         public ActionResult UserLogin()
         {
             return View();
